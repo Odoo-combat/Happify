@@ -1,0 +1,15 @@
+Models : 
+
+User : 
+    name
+    mobile
+    email
+    
+employee : 
+    user_id
+    user_hierarchy_id   
+
+
+Grievance : 
+    employee : 
+    
