@@ -1,0 +1,98 @@
+									Basic Roadmap for Our System
+
+
+
+Roles:
+
+1. Employee
+2. HR
+3. Department
+4. Administrator
+5. Admin
+
+Pages:- 
+
+1. Login and Signup
+2. Grievance Form
+3. Tracking page (Show Status) by default home page
+4. dashboard for hr,dept,administrator
+5. message panel
+
+Acess Roles:
+
+1. Employee :- fill up form and show their status
+
+2. HR :- Response the issues and update the status of this issue
+
+3. Dept :- Response the issues and update the status of this issue
+
+4. Administrator: manage all issues and can assign to hr and dept
+
+5. Admin:- Full Access or by default Admin panel
+
+Employee Information
+
+    Employee ID: Unique identifier for the employee.
+    Name: Full name of the employee.
+    Department: Department where the employee works.
+    Position: Job title of the employee.
+    Email: Employee's email address.
+    Phone Number: Employee's contact number.
+
+Grievance Details
+
+    Grievance Type: Category of the grievance (e.g., Harassment, Discrimination, Workplace Safety, Pay/Benefits, etc.).
+    Date of Incident: Date when the grievance incident occurred.
+    Location of Incident: Location where the incident took place.
+    Description: Detailed description of the grievance.
+    Evidence: Option to upload supporting documents or evidence (e.g., emails, photos, etc.).
+
+Resolution Sought
+
+    Preferred Resolution: Employee’s preference for how the grievance should be resolved (e.g., Apology, Compensation, Policy Change, etc.).
+
+Witness Information
+
+    Witness Name: Name of any witness to the incident.
+    Witness Contact Information: Contact details of the witness.
+
+Additional Information
+
+    Previous Complaints: Any previous complaints related to this grievance.
+    Additional Comments: Any additional comments or information the employee wishes to provide.
+
+
+GRIEVANCE_TYPE_CHOICES = [
+        ('Harassment', 'Harassment'),
+        ('Discrimination', 'Discrimination'),
+        ('Workplace Safety', 'Workplace Safety'),
+        ('Pay/Benefits', 'Pay/Benefits'),
+        ('Other', 'Other'),
+    ]
+
+    RESOLUTION_CHOICES = [
+        ('Apology', 'Apology'),
+        ('Compensation', 'Compensation'),
+        ('Policy Change', 'Policy Change'),
+        ('Other', 'Other'),
+    ]
+
+Backend Tables:-
+
+User_Hierarchy:- id,HierarchyName,Hierarchyorder,isactive
+
+User_data : id, name,mobile,email,userhierarchyid,isactive
+
+Grievance_Type: id, Grievance_Typename,isactive
+
+Preferred Resolution: id,resol_name,isactive
+
+Grievance_data:- id,userid,Description,Evidence_path,Grievance_Typeid,Date of Incident,Location of Incident,Preferred Resolutionid, Witness Nameid,Previous Complaintsid,Additional Comments
+isactive
+
+status_type: id,name,Statusorder, isactive
+
+complaints_data: id,Grievanceid,statusid,isactive
+
+message_channel:- id,senderid,receviierid,message,isactive
+
