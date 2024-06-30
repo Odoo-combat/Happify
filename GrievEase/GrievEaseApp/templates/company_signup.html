@@ -1,0 +1,17 @@
+{% extends 'base.html' %} {% load crispy_forms_tags %} {% block content %}
+<title>Employee Profile Signup</title>
+<body>
+  <div class="form-container">
+    <div class="container mt-5">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <form action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %} {{ u_form | crispy }} {{ p_form | crispy }}
+            <button class="btn btn-primary" type="submit">Signup</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+{% endblock %}

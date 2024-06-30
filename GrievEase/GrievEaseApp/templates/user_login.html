@@ -1,0 +1,28 @@
+{% extends 'base.html' %} {% load crispy_forms_tags %} {% block content %} {% if
+login_form.errors %}
+<div class="alert alert-danger">
+  <strong>Error:</strong> There was a problem with your login.
+  <ul>
+    {% for field, errors in login_form.errors.items %} {% for error in errors %}
+    <li>{{ error }}</li>
+    {% endfor %} {% endfor %}
+  </ul>
+</div>
+{% endif %}
+
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">Login</div>
+        <div class="card-body">
+          <form method="POST" action="{% url 'user_login' %}">
+            {% csrf_token %} {{ login_form|crispy }}
+            <button type="submit" class="btn btn-primary">Login</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
