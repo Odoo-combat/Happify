@@ -7,6 +7,13 @@ from phonenumber_field.modelfields import PhoneNumberField
 from PIL import Image
 
 
+# make custom user model for implementin login and registration
+from django.contrib.auth.models import AbstractUser
+from django.db import models
+from django.conf import settings
+from django.utils import timezone
+from django.contrib.auth.models import User
+
 # Create your models here.
 class Employee(models.Model):
 
